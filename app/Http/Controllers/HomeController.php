@@ -21,12 +21,22 @@ class HomeController extends Controller
         return view('contact');
     }
    
+    public function orderlist(){
+        return view('order');
+    }
+    public function orderdetail(){
+        return view('orderdetail');
+    }
+   
     public function privacy(){
         return view('privacy');
     }
     public function termscondition(){
         return view('termscondition');
     }
+    // public function blog(){
+    //     return view('blog');
+    // }
     public function blog(){
         return view('blog');
     }

@@ -1,4 +1,4 @@
-@extends('frontend.layout.app')
+@extends('layouts.app')
 @section('title','IBD Group | ')
 @section('style')
 <link rel="stylesheet" href="{{url('/assets/css/style.css')}}">

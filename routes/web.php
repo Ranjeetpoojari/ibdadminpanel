@@ -25,4 +25,5 @@ Route::get('/orderdetail',[HomeController::class,'orderdetail']);
 Route::get('/privacy',[HomeController::class,'privacy']);
 Route::get('/termscondition',[HomeController::class,'termscondition']);
 Route::get('/blog',[HomeController::class,'blog']);
+// Route::get('/blog',[HomeController::class,'blog']);
 Route::get('/blogdetail',[HomeController::class,'blogdetail']);
