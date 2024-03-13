@@ -20,7 +20,7 @@
       <div class="row">
         <div>
 
-          <a class="navbar-brand d-block m-auto my-2" href="#"><img src="{{url('/frontend/images/logo.png')}}" alt="" srcset="" class=""></a>
+          <a class="navbar-brand d-block m-auto my-2" href="#"><img src="{{url('/assets/images/logo.png')}}" alt="" srcset="" class=""></a>
         </div>
         <p class="fs_16 text-center m-auto">We ara a lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a

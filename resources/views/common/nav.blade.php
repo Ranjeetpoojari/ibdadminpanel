@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-wrap">
       <div class="navbar_container m-auto">
         <div class="d-flex justify-content-between my-2">
-          <a class="navbar-brand d-block" href="#"><img src="{{url('/frontend/images/logo.png')}}" alt="" srcset="" class=""></a>
+          <a class="navbar-brand d-block" href="#"><img src="{{url('/assets/images/logo.png')}}" alt="" srcset="" class=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
             aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -204,7 +204,7 @@
 </header>
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
-      <h5 id="offcanvasRightLabel"><img src="{{url('/frontend/images/logo.png')}}" alt="" srcset=""></h5>
+      <h5 id="offcanvasRightLabel"><img src="{{url('/assets/images/logo.png')}}" alt="" srcset=""></h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">

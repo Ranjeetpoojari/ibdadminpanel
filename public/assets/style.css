@@ -116,9 +116,9 @@ footer .footer_contact div:first-child{width:50px;}
  /* index content end */
 
  /* filter page */
- .form-select.filter {width:150px;}
+ .form-select.filter {width:140px;}
  .filter_img{width:207px;height:auto; object-fit: cover; aspect-ratio: 16/16;}
-.filter_content{width:550px;}
+.filter_content{width:auto;}
 .country.fil img{width: 16px; height:16px;}
 .filterbtn{width: 320px;}
 .filter_con .filter_list>.filter_iteam:hover{border:2px solid #F05252;}

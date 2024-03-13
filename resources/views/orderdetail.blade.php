@@ -23,11 +23,11 @@
       <section>
         <div class="container">
             <div class="row">
-            <div class="col-6">
+            <div class="col-6 ">
               <h1 class="fw_500 fs_30 text-prim my-3">Agrasen Ispat Pvt Ltd</h1>
-            <div class="d-flex my-2">
+            <div class="d-flex flex-wrap my-2">
                 <div class="country fil d-flex mx-2">
-                  <img src="img\india.png" alt="" class="rounded-circle">&nbsp;<span class="text-uppercase fs_16">IND</span>
+                  <img src="{{url('/assets/images/india.png')}}" alt="" class="rounded-circle">&nbsp;<span class="text-uppercase fs_16">IND</span>
                 </div>
                 <div class="city mx-2">
                   <span class="text-capitalize fs_16">Mumbai</span>
