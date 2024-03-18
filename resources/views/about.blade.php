@@ -21,7 +21,7 @@
             
             <nav aria-label="breadcrumb" class="ms-5">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item text-white fw-500 "><a href="#" class="text-decoration-none text-white">Home</a></li>
+                <li class="breadcrumb-item text-white fw-500 "><a href="/" class="text-decoration-none text-white">Home</a></li>
                 <li class="breadcrumb-item text-white fw-500 active" aria-current="page">About us</li>
                 </ol>
             </nav>

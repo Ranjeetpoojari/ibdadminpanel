@@ -18,9 +18,12 @@ use App\Http\Controllers\HomeController;
 //     return view('welcome');
 // });
 Route::get('/',[HomeController::class,'index']);
+
 Route::get('/about',[HomeController::class,'about']);
 Route::get('/contact',[HomeController::class,'contact']);
-Route::get('/orderlist',[HomeController::class,'orderlist']);
+
+Route::get('/search',[HomeController::class,'search']);
+
 Route::get('/orderdetail',[HomeController::class,'orderdetail']);
 Route::get('/privacy',[HomeController::class,'privacy']);
 Route::get('/termscondition',[HomeController::class,'termscondition']);

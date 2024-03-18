@@ -15,22 +15,16 @@
           </div>
           <div class="overlay opacity-25 w-100 h-100 position-absolute z-3 bg-dark top-0">
           </div>
-          <!-- <div class="banner_content_con position-absolute z-5 opacity-100 m-auto w-100 h-100 top-0 text-white">
-            <div class="banner_content d-block my-5 m-auto">
-              <h1 class="fw-bold text-white text-center">Find a wide range of local services at your fingertips.</h1>
-              <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for</p>
-              <div class="input-group mb-3 index_search">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-search fw-bold fs_20"></i></span>
-                <input type="search" class="form-control " placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-              <div class="text-capitalize ps-5">
-                Popular Search:- &nbsp;
-                <a href="#" target="_blank" class="text-white d-inline-block">Construction Resource</a>
-                <a href="#" target="_blank" class="text-white d-inline-block">Electrician</a>
-                <a href="#" target="_blank" class="text-white d-inline-block">Painter</a>
-              </div>
+          <div class="banner_content_con position-absolute z-5 opacity-100 m-auto w-100 h-100 top-0 text-white">
+            <h5  class="text-white fs_50 fw_700 mt-5 ms-5">About IBD Groups</h5>
+            
+            <nav aria-label="breadcrumb" class="ms-5">
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item text-white fw-500 "><a href="/" class="text-decoration-none text-white">Home</a></li>
+                <li class="breadcrumb-item text-white fw-500 active" aria-current="page">Search</li>
+                </ol>
+            </nav>
             </div>
-          </div> -->
         </div>
 
       </div>

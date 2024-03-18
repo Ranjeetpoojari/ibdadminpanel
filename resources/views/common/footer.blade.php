@@ -24,7 +24,7 @@
         </div>
         <p class="fs_16 text-center m-auto">We ara a lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a
-            href="#" target="_blank" class="text-decoration-none">Read More</a></p>
+            href="/about" target="_blank" class="text-decoration-none">Read More</a></p>
       </div>
       <div class="row my-5 ">
         <div class="col-12 col-sm-6 col-lg-3 d-flex footer_contact mt-3 mt-lg-0">

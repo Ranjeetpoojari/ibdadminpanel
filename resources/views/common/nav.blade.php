@@ -36,167 +36,31 @@
       <hr class="border border-dark w-100 my-2 d-none d-lg-block">
       <div class="navbar_container m-auto d-none d-lg-flex">
         <ul class="d-flex align-items-center px-0 mb-1 dropdown_option">
-          <li class="custom-dropdown position-relative nowrap">
-            <div class="custom-button text-black text-capitalize">
-              Civil Work&nbsp;<i class="bi bi-chevron-down fs_18 fw_700"></i>
-            </div>
-            <ul class="custom-menu position-absolute z-9 bg-light px-0">
-
-              <li><a href="" class="fw-300 text-capitalize text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-
-            </ul>
-          </li>
-          <li class="custom-dropdown position-relative nowrap">
-            <div class="custom-button text-black text-capitalize">
-              Civil Work&nbsp;<i class="bi bi-chevron-down fs_18 fw_700"></i>
-            </div>
-            <ul class="custom-menu position-absolute z-9 bg-light px-0">
-
-              <li><a href="" class="fw-300 text-capitalize text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-
-            </ul>
-          </li>
-          <li class="custom-dropdown position-relative nowrap">
-            <div class="custom-button text-black text-capitalize">
-              Civil Work&nbsp;<i class="bi bi-chevron-down fs_18 fw_700"></i>
-            </div>
-            <ul class="custom-menu position-absolute z-9 bg-light px-0">
-
-              <li><a href="" class="fw-300 text-capitalize text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-
-            </ul>
-          </li>
-          <li class="custom-dropdown position-relative nowrap">
-            <div class="custom-button text-black text-capitalize">
-              Civil Work&nbsp;<i class="bi bi-chevron-down fs_18 fw_700"></i>
-            </div>
-            <ul class="custom-menu position-absolute z-9 bg-light px-0">
-
-              <li><a href="" class="fw-300 text-capitalize text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-
-            </ul>
-          </li>
-
-          <li class="custom-dropdown position-relative nowrap">
-            <div class="custom-button text-black text-capitalize">
-              Civil Work&nbsp;<i class="bi bi-chevron-down fs_18 fw_700"></i>
-            </div>
-            <ul class="custom-menu position-absolute z-9 bg-light px-0">
-
-              <li><a href="" class="fw-300 text-capitalize text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-
-            </ul>
-          </li>
-          <li class="custom-dropdown position-relative nowrap">
-            <div class="custom-button text-black ">
-              Rabit truck&nbsp;<i class="bi bi-chevron-down fs_18 fw_700"></i>
-            </div>
-            <ul class="custom-menu position-absolute z-9 bg-light px-0">
-
-              <li><a href="" class="fw-300 text-capitalize text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-
-            </ul>
-          </li>
-          <li class="custom-dropdown position-relative nowrap">
-            <div class="custom-button text-black ">
-              RCC Work&nbsp;<i class="bi bi-chevron-down fs_18 fw_700"></i>
-            </div>
-            <ul class="custom-menu position-absolute z-9 bg-light px-0">
-
-              <li><a href="" class="fw-300 text-capitalize text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-
-            </ul>
-          </li>
-          <li class="custom-dropdown position-relative nowrap">
-            <div class="custom-button text-black ">
-              interior work&nbsp;<i class="bi bi-chevron-down fs_18 fw_700"></i>
-            </div>
-            <ul class="custom-menu position-absolute z-9 bg-light px-0">
-
-              <li><a href="" class="fw-300 text-capitalize text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-
-            </ul>
-          </li>
-          <li class="custom-dropdown position-relative nowrap">
-            <div class="custom-button text-black ">
-              Labour supplier&nbsp;<i class="bi bi-chevron-down fs_18 fw_700"></i>
-            </div>
-            <ul class="custom-menu position-absolute z-9 bg-light px-0">
-
-              <li><a href="" class="fw-300 text-capitalize text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-              <li><a href="" class="fw-300 text-capitalize  text-decoration-none  fs_15 fw-500 ps-2 py-1 d-block">Civil
-                  Work</a></li>
-
-            </ul>
-          </li>
+          @php
+              $categories = \App\Models\Category::where('is_active', "active")->get();
+          @endphp
+          @if ($categories)
+              @foreach ($categories as $item)
+                  @php
+                      $subcategories = \App\Models\Subcategory::where('is_active', "active")->where('category_id', $item->id)->get();
+                  @endphp
+                <li class="custom-dropdown position-relative nowrap">
+                  @if(count($subcategories) == 0) <a href="{{url('/search?category='.$item->slug)}}" class="fw-300 text-capitalize text-decoration-none fs_15 fw-500 ps-2 py-1 d-block"> @endif
+                    <div class="custom-button me-3 text-black text-capitalize" style="width:auto!important;">{{$item->name}}&nbsp; @if(count($subcategories)>0) <i class="bi bi-chevron-down fs_18 fw_700"></i> @endif </div>
+                    @if(count($subcategories) == 0) </a> @endif
+                  @if($subcategories)
+                  <ul class="custom-menu position-absolute z-9 bg-light px-0">
+                    @foreach ($subcategories as $item)
+                      <li><a href="{{url('/search?subcategory='.$item->slug)}}" class="fw-300 text-capitalize text-decoration-none fs_15 fw-500 ps-2 py-1 d-block">{{$item->name}}</a></li> 
+                    @endforeach
+                  </ul>
+                  @endif
+                </li>
+              @endforeach
+          @endif
+          
         </ul>
-        <li class="">
-          <a href="#"
-            class="fw-300 text-capitalize text-decoration-none  fs_15 fw_600 ps-2 py-1 d-block text-dark">More</a>
-        </li>
-
-
+        
 
       </div>
 
