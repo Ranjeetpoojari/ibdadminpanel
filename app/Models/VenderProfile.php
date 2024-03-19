@@ -12,7 +12,7 @@ class VenderProfile extends Model
     'business_name',
     'address',
     'city',
-    'stste',
+    'state',
     'pincode',
     'country',
     'is_verfied',

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-// use App\Models\Subsubcategory;
+use App\Models\Subcategory;
 use App\Models\Category;
 
 class SubcategoryController extends Controller

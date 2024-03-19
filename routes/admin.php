@@ -57,10 +57,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/subsubcategories/store', [SubsubcategoryController::class, 'store']);
     
     Route::get('/vender_profile', [Vender_profileController::class, 'index']);
-    Route::get('/subsubcategories/create', [SubsubcategoryController::class, 'subcreateCategory']);
-    Route::get('/subsubcategories/edit/{id}',[SubsubcategoryController::class, 'edit']);
-    Route::post('/subsubcategories/update', [SubsubcategoryController::class, 'update']);
-    Route::post('/subsubcategories/store', [SubsubcategoryController::class, 'store']);
+    Route::get('/vender_profile/create', [Vender_profileController::class, 'create']);
+    Route::get('/vender_profile/edit/{id}',[Vender_profileController::class, 'edit']);
+    Route::post('/subsubcategories/update', [Vender_profileController::class, 'update']);
+    Route::post('/vender_profile/store', [Vender_profileController::class, 'store']);
 
   
     Route::get("/blog", [BlogController::class, 'index']);
