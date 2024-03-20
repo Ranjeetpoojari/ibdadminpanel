@@ -36,7 +36,7 @@
                                     <form class="forms-sample" action="{{url('/admin/subsubcategories/store')}}" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
                                         @csrf
                                         {{-- <input type="hidden" name="subcategory_id" value="{{isset($subcategory->id)?$subcategory->id:''}}"> --}}
-                                        <input type="hidden" name="subsubcategory_id" value="{{isset($subsubcategory->id)?$subsubcategory->id:''}}">
+                                        <input type="hidden" name="id" value="{{isset($subsubcategory->id)?$subsubcategory->id:''}}">
                                         <div class="form-group">
                                             <label for="exampleInputUsername1">subsubcategory Name</label>
                                             <input type="text" class="form-control" name="name" id="exampleInputUsername1"

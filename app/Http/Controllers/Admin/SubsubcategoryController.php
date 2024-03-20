@@ -22,25 +22,46 @@ class SubsubcategoryController extends Controller
         $subcategory = Subcategory::all();
         return view('admin.subsubcategory.create',['text'=>'Success','subcategory'=>$subcategory]);
     }
-    public function edit($id){
-        return view('admin.subsubcategory.edit', ["subcategory"=>Subsubcategory::find(decrypt($category_id))]);
+    public function edit(Request $req, $id)
+    {
+        $subcategory = Subcategory::all();
+        $subsubcategory = Subsubcategory::find(decrypt($id));
+        return view('admin.subsubcategory.create', ['subsubcategory'=>$subsubcategory,'subcategory'=>$subcategory, 'text' => "Update Vendor Profile"]); // Corrected the text
     }
-    public function store(Request $request){
-        $subsubcategory = new Subsubcategory;
-        $subcategory = Subcategory::where('name', $request->subcategory)->first();
-    
-        if ($subcategory) {
-            $subsubcategory->subcategory_id = $subcategory->id;
-        } else {
-            $subsubcategory->subcategory_id = null;
+    public function store(Request $req)
+    { 
+        $subsubcategory = $req->has('id') ? Subsubcategory::find($req->id) : new Subsubcategory;
+        
+        if ($req->hasFile('image')) {
+            $fileName = time() . $req->file('image')->getClientOriginalName();
+            $destinationPath = public_path() . '/subsubcategory/';
+            $req->file('image')->move($destinationPath, $fileName);
+            $subsubcategory->image = '/subsubcategory/' . $fileName;
         }
-        // $subcategory->id = 2;
-        $subsubcategory->name = $request->name;
-        $subsubcategory->slug = str_replace(" ", "-", strtolower($request->name));
+        
+        $subsubcategory->name = $req->name;
+        $subsubcategory->slug = str_replace(" ", "-", strtolower($req->name));
         $subsubcategory->is_active = "active";
         $subsubcategory->save();
-        return back()->with(["status"=>"success", "msg"=>"subcategory created successfull"]);
-        
+    
+        // Redirect with success or failure message
+        $msg = $req->has('id') ? "Subsubcategory updated successfully" : "Subsubcategory created successfully";
+        return back()->with(["status" => "success", "msg" => $msg]);
     }
-    // public function 
+    public function delete($id)
+    {
+        $Subsubcategory = Subsubcategory::find($id);
+        if (!$Subsubcategory) {
+            return redirect()->back()->with('error', 'Subsubcategories not found');
+        }
+        $Subsubcategory->delete();
+        return redirect()->back()->with('success', 'Subsubcategories deleted successfully');
+    }
+    public function changeStatus($status, $id)
+    {
+        $Subsubcategory = Subsubcategory::find(decrypt($id));
+        $Subsubcategory->is_active = $status;
+        $Subsubcategory->save();
+        return back()->with(["status" => "success", "msg" => "Subsubcategories inactive"]);
+    }
 }

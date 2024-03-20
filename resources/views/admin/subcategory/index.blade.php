@@ -33,11 +33,11 @@
                                         <thead>
                                             <tr>
                                                 <th> S.R.No. </th>
-                                                <th>Language Name </th>
+                                                <th> Name </th>
                                               
-                                                {{-- <th> Banner </th>
-                                                <th> Icon </th> --}}
-                                                <th> Slug </th>
+                                                <th> Banner </th>
+                                                {{-- <th> Icon </th> --}}
+                                                <th> Category </th>
                                                 <th> Action </th>
                                             </tr>
                                         </thead>
@@ -63,15 +63,34 @@
                                                 </td>
                                               
                                                 <td>
-                                                    {{-- <img src="{{url($item->icon)}}" alt="{{$item->name}}" srcset=""> --}}
+                                                    <img src="{{url($item->image)}}" alt="{{$item->name}}" srcset="">
                                                 </td>
                                                 <td>
-                                                    {{$item->slug}}
+                                                    {{$item->category}}
                                                 </td>
                                                 <td>
-                                                    <a href="{{url('/admin/categories/edit/'.encrypt($item->id))}}">
+                                                    @if ($item->is_active == "active")
+                                                    <a href="{{ url('/admin/subcategories/inactive/' . encrypt($item->id)) }}">
+                                                        <button type="button" class="btn btn-danger btn-sm">Inactive</button>
+                                                    </a>
+                                                @endif
+                                                @if ($item->is_active == "inactive")
+                                                    <a href="{{ url('/admin/subcategories/active/' . encrypt($item->id)) }}">
+                                                        <button type="button" class="btn btn-success btn-sm">Active</button>
+                                                    </a>
+                                                @endif
+                                                    <a href="{{url('/admin/subcategories/edit/'.encrypt($item->id))}}">
                                                         <button type="button" class="btn btn-info btn-sm">Edit</button>
                                                     </a>
+                                                    <a href="{{ url('/admin/subcategories/delete/{id}' . $item->id) }}" 
+                                                        onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this vendor profile?')) document.getElementById('delete-form-{{ $item->id }}').submit();"
+                                                        class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-trash"></i>
+                                                     </a>
+                                                     <form id="delete-form-{{ $item->id }}" action="{{ url('/admin/subcategories/delete/' . $item->id) }}" method="POST" style="display: none;">
+                                                         @csrf
+                                                         @method('DELETE')
+                                                     </form>
                                                     
                                                 </td>
                                             </tr>

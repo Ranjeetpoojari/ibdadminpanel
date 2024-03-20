@@ -87,7 +87,12 @@
                                                     {{$item->country}}
                                                 </td>
                                                 <td>
-                                                    {{$item->is_verfied}}
+                                                    @if ($item->is_verfied == 1)
+                                                    Yes
+                                                    @endif
+                                                    @if ($item->is_verfied == 0)
+                                                   No
+                                                    @endif
                                                 </td>
                                                 <td>
                                                     {{$item->contact_email}}
@@ -99,10 +104,30 @@
                                                     {{$item->is_active}}
                                                 </td>
                                                 <td>
+                                                    
+                                                    @if ($item->is_active == "active")
+                                                    <a href="{{ url('/admin/vender_profile/inactive/' . encrypt($item->id)) }}">
+                                                        <button type="button" class="btn btn-danger btn-sm">Inactive</button>
+                                                    </a>
+                                                @endif
+                                                @if ($item->is_active == "inactive")
+                                                    <a href="{{ url('/admin/vender_profile/active/' . encrypt($item->id)) }}">
+                                                        <button type="button" class="btn btn-success btn-sm">Active</button>
+                                                    </a>
+                                                @endif
                                                     <a href="{{url('/admin/vender_profile/edit/' . encrypt($item->id))}}">
                                                         <button type="button" class="btn btn-info btn-sm">Edit</button>
                                                     </a>
-                                                    
+                                                    <a href="{{ url('/admin/vender_profile/delete/' . $item->id) }}" 
+                                                        onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this vendor profile?')) document.getElementById('delete-form-{{ $item->id }}').submit();"
+                                                        class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-trash"></i>
+                                                     </a>
+                                                     <form id="delete-form-{{ $item->id }}" action="{{ url('/admin/vender_profile/delete/' . $item->id) }}" method="POST" style="display: none;">
+                                                         @csrf
+                                                         @method('DELETE')
+                                                     </form>
+                                                     
                                                 </td>
                                             </tr>
                                             @endforeach
