@@ -16,12 +16,13 @@
           <div class="overlay opacity-25 w-100 h-100 position-absolute z-3 bg-dark top-0">
           </div>
           <div class="banner_content_con position-absolute z-5 opacity-100 m-auto w-100 h-100 top-0 text-white">
-            <h5  class="text-white fs_50 fw_700 mt-5 ms-5">About IBD Groups</h5>
+            <h5  class="text-white fs_50 fw_700 mt-5 ms-5">{{$category->name}}</h5>
             
             <nav aria-label="breadcrumb" class="ms-5">
                 <ol class="breadcrumb">
                 <li class="breadcrumb-item text-white fw-500 "><a href="/" class="text-decoration-none text-white">Home</a></li>
                 <li class="breadcrumb-item text-white fw-500 active" aria-current="page">Search</li>
+                <li class="breadcrumb-item text-white fw-500 active" aria-current="page">{{$category->name}}</li>
                 </ol>
             </nav>
             </div>
@@ -33,11 +34,11 @@
     <div class="container-fluid">
         <div class="filter_con w-90 m-auto">
 <div class="row px-0 mt-2">
-    <h6 class="my-2 text-captailize fw_500 fs_14">
+    <h6 class="my-2 text-captailize fw_500 fs_14 d-none">
         Quick Filters
     </h6>
     <div class="col-12 col-lg-8">
-        <div class="d-flex flex-wrap justify-content-between">
+        <div class="d-flex flex-wrap justify-content-between d-none">
             <buttom class="border px-4 py-3 rounded-2 text-capitalize mb-2">
                 Verified
             </buttom>
@@ -64,161 +65,48 @@
               </select>
             
         </div>
+
         <ul class="filter_list px-0">
-            <li class="filter_iteam rounded-4 my-4">
-                <div class="row px-3 py-3  ">
-                    <div class="col-12 col-sm-4 col-xxl-3">
-                        <div class="filter_img m-auto rounded-3">
-                            <img src="{{url('/assets/images/cement.png')}}" alt="" srcset="" class="w-100 h-100 rounded-3">
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-8 col-xxl-9">
-                        <div class="filter_content ms-1 ms-sm-0">
-                            <div class="d-flex flex-wrap ">
-                                <h6 class="fs_20 fw_400 mb-0">Rajaram Interior hardware</h6>
-                                <div>
-                                    <span class=" px-2 mx-1 py-1 rounded-2 text-blue bg-ter fs_12"><i class="bi bi-patch-check-fill"></i>&nbsp;&nbsp;Verified</span>
-                                    <span class=" fs_12 mx-1 px-2 py-1 rounded-2 text-yellow bg-oct"><i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;Best saler</span>
-                                </div>    
-                                <div>
-                                  <span class="text-yellow fs_12">4.6/5</span>&nbsp;<span class="fs_12">(256 Ratings)</span>
-                                </div>
+      
+          @if($products)
+
+            @foreach ($products as $item)
+              <li class="filter_iteam rounded-4 my-4">
+                    <div class="row px-3 py-3  ">
+                        <div class="col-12 col-sm-4 col-xxl-3">
+                            <div class="filter_img m-auto rounded-3">
+                                <a href="{{url('/company/'.$item->slug)}}"><img src="{{url($item->profile_image)}}" alt="{{$item->business_name}}" srcset="" class="w-100 h-100 rounded-3"></a>
                             </div>
-                            <div class="d-flex my-2">
-                                <div class="country fil d-flex mx-2">
-                                  <img src="{{url('/assets/images/india.png')}}" alt="" class="rounded-circle">&nbsp;<span class="text-uppercase fs_15">IND</span>
-                                </div>
-                                <div class="city mx-2">
-                                  <span class="text-capitalize fs_15">Mumbai</span>
-                                </div>
-                                <div class="service_type rounded-2 text-prim bg-light-prim mx-2 px-2 fs_15 text-capitalize">
-                                  Wholesaler
-                                </div>
-                              
-                              </div>
-                              <ul class="d-flex flex-wrap px-0 ">
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">+50</a>
-                                </ul>
-                                <a href="#" target="_blank" class="text-white text-capitalize bg-sec  py-2 mt-2 rounded-2 text-center d-block text-decoration-none fw_500 filterbtn">Get Phone Number</a>
                         </div>
-                    </div>
-                 </div>
-        </li>
-            <li class="filter_iteam rounded-4 my-4">
-                <div class="row px-3 py-3  ">
-                    <div class="col-12 col-sm-4 col-xxl-3">
-                        <div class="filter_img m-auto rounded-3">
-                            <img src="{{url('/assets/images/cement.png')}}" alt="" srcset="" class="w-100 h-100 rounded-3">
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-8 col-xxl-9">
-                        <div class="filter_content ">
-                            <div class="d-flex flex-wrap ">
-                                <h6 class="fs_20 fw_400 mb-0">Rajaram Interior hardware</h6>
-                                <div>
-                                    <span class=" px-2 mx-1 py-1 rounded-2 text-blue bg-ter fs_12"><i class="bi bi-patch-check-fill"></i>&nbsp;&nbsp;Verified</span>
-                                    <span class=" fs_12 mx-1 px-2 py-1 rounded-2 text-yellow bg-oct"><i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;Best saler</span>
-                                </div>    
-                                <div>
-                                  <span class="text-yellow fs_12">4.6/5</span>&nbsp;<span class="fs_12">(256 Ratings)</span>
+                        <div class="col-12 col-sm-8 col-xxl-9">
+                            <div class="filter_content ms-1 ms-sm-0">
+                                <div class="d-flex flex-wrap ">
+                                    <h6 class="fs_20 fw_400 mb-0">{{$item->business_name}}</h6>
+                                    <div>
+                                       @if($item->is_verfied==1) <span class=" px-2 mx-1 py-1 rounded-2 text-blue bg-ter fs_12"><i class="bi bi-patch-check-fill"></i>&nbsp;&nbsp;Verified</span>@endif
+                                        <span class=" fs_12 mx-1 px-2 py-1 rounded-2 text-yellow bg-oct"><i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;Best saler</span>
+                                    </div>    
+                                    <div>
+                                      <span class="text-yellow fs_12">{{$item->rate}}/5</span>&nbsp;<span class="fs_12">({{$item->total_rate}} Ratings)</span>
+                                    </div>
                                 </div>
+                                <div class="d-flex my-2">
+                                    <div class="service_type rounded-2 text-prim bg-light-prim mx-2 px-2 fs_15 text-capitalize">
+                                      Wholesaler
+                                    </div>
+                                  
+                                  </div>
+                                  <ul class="d-flex flex-wrap px-0 ">
+                                    <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</li>
+                                    </ul>
+                                    <a href="{{url('/company/'.$item->slug)}}" target="_blank" class="text-white text-capitalize bg-sec  py-2 mt-2 rounded-2 text-center d-block text-decoration-none fw_500 filterbtn">Get Phone Number</a>
                             </div>
-                            <div class="d-flex my-2">
-                                <div class="country fil d-flex mx-2">
-                                  <img src="{{url('/assets/images/india.png')}}" alt="" class="rounded-circle">&nbsp;<span class="text-uppercase fs_15">IND</span>
-                                </div>
-                                <div class="city mx-2">
-                                  <span class="text-capitalize fs_15">Mumbai</span>
-                                </div>
-                                <div class="service_type rounded-2 text-prim bg-light-prim mx-2 px-2 fs_15 text-capitalize">
-                                  Wholesaler
-                                </div>
-                              
-                              </div>
-                              <ul class="d-flex flex-wrap px-0 ">
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">+50</a>
-                                </ul>
-                                <a href="#" target="_blank" class="text-white text-capitalize bg-sec  py-2 mt-2 rounded-2 text-center d-block text-decoration-none fw_500 filterbtn">Get Phone Number</a>
                         </div>
                     </div>
-                 </div>
-        </li>
-            <li class="filter_iteam rounded-4 my-4">
-                <div class="row px-3 py-3  ">
-                    <div class="col-12 col-sm-4 col-xxl-3">
-                        <div class="filter_img m-auto rounded-3">
-                            <img src="{{url('/assets/images/cement.png')}}" alt="" srcset="" class="w-100 h-100 rounded-3">
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-8 col-xxl-9">
-                        <div class="filter_content ">
-                            <div class="d-flex flex-wrap ">
-                                <h6 class="fs_20 fw_400 mb-0">Rajaram Interior hardware</h6>
-                                <div>
-                                    <span class=" px-2 mx-1 py-1 rounded-2 text-blue bg-ter fs_12"><i class="bi bi-patch-check-fill"></i>&nbsp;&nbsp;Verified</span>
-                                    <span class=" fs_12 mx-1 px-2 py-1 rounded-2 text-yellow bg-oct"><i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;Best saler</span>
-                                </div>    
-                                <div>
-                                  <span class="text-yellow fs_12">4.6/5</span>&nbsp;<span class="fs_12">(256 Ratings)</span>
-                                </div>
-                            </div>
-                            <div class="d-flex my-2">
-                                <div class="country fil d-flex mx-2">
-                                  <img src="{{url('/assets/images/india.png')}}" alt="" class="rounded-circle">&nbsp;<span class="text-uppercase fs_15">IND</span>
-                                </div>
-                                <div class="city mx-2">
-                                  <span class="text-capitalize fs_15">Mumbai</span>
-                                </div>
-                                <div class="service_type rounded-2 text-prim bg-light-prim mx-2 px-2 fs_15 text-capitalize">
-                                  Wholesaler
-                                </div>
-                              
-                              </div>
-                              <ul class="d-flex flex-wrap px-0 ">
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Color Paint</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Tiles</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">Pip</a>
-                                <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500 my-1">+50</a>
-                                </ul>
-                                <a href="#" target="_blank" class="text-white text-capitalize bg-sec  py-2 mt-2 rounded-2 text-center d-block text-decoration-none fw_500 filterbtn">Get Phone Number</a>
-                        </div>
-                    </div>
-                 </div>
-        </li>
-       
+              </li>
+            @endforeach
+          @endif
+      
      
         </ul>
         <nav aria-label="Page navigation example ">

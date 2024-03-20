@@ -136,10 +136,8 @@
                     <p class="fs_15 text-secondary fw_12 mb-1">  Address : {{$item->address}} {{$item->city}} {{$item->state}} {{$item->pincode}}</p>
                     </div>
                     <ul class="d-flex px-0 ">
-                      <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500">Color Paint</a>
-                      <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500">Tiles</a>
-                      <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500">Pip</a>
-                      <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500">+50</a>
+                      <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500">Color Paint</li>
+                      <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500">+50</li>
                       </ul>
                     <a href="#" target="_blank" class="text-white text-capitalize bg-sec  py-2 mb-3 m-2 rounded-2 text-center d-block text-decoration-none fw_500">Get Phone Number</a>
                   </div>

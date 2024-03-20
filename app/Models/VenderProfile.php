@@ -10,6 +10,7 @@ class VenderProfile extends Model
  protected $fillable =[
     'User_id',
     'business_name',
+    'slug',
     'address',
     'city',
     'stste',

@@ -23,8 +23,9 @@ Route::get('/about',[HomeController::class,'about']);
 Route::get('/contact',[HomeController::class,'contact']);
 
 Route::get('/search',[HomeController::class,'search']);
+Route::get('/company/{slug}',[HomeController::class,'companyProfile']);
+Route::get('/company/lead/{id}',[HomeController::class,'companyLead']);
 
-Route::get('/orderdetail',[HomeController::class,'orderdetail']);
 Route::get('/privacy',[HomeController::class,'privacy']);
 Route::get('/termscondition',[HomeController::class,'termscondition']);
 Route::get('/blog',[HomeController::class,'blog']);
