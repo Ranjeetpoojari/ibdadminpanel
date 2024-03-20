@@ -35,7 +35,7 @@
                                 <div class="table-responsive">
                                     <form class="forms-sample" action="{{url('/admin/subcategories/store')}}" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
                                         @csrf
-                                        <input type="hidden" name="subcategory_id" value="{{isset($subcategory->id)?$subcategory->id:''}}">
+                                        <input type="hidden" name="id" value="{{isset($subcategory->id)?$subcategory->id:''}}">
                                         <div class="form-group">
                                             <label for="exampleInputUsername1">Subcategory Name</label>
                                             <input type="text" class="form-control" name="name" id="exampleInputUsername1"
@@ -51,6 +51,10 @@
                                             </option>
                                         @endforeach
                                                 </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername1">Subcategory Image</label>
+                                            <input type="file" class="form-control" name="image" id="profile_image" placeholder="Profile Image" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="is_active">Status</label>

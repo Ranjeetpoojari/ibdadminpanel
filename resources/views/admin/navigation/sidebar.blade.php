@@ -48,11 +48,7 @@
           <span class="menu-title">SubCategory</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/admin/subsubcategories')}}">
-          <span class="menu-title">SubsubCategory</span>
-        </a>
-      </li>
+    
       <li class="nav-item">
         <a class="nav-link" href="{{url('/admin/subsubcategories')}}">
           <span class="menu-title">SubsubCategory</span>

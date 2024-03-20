@@ -47,20 +47,29 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/subcategories', [SubcategoryController::class, 'index']);
     Route::get('/subcategories/create', [SubcategoryController::class, 'subcreateCategory']);
     Route::get('/subcategories/edit/{id}',[ SubcategoryController::class, 'edit']);
-    Route::post('/subcategories/update', [SubcategoryController::class, 'update']);
+    Route::get('/subcategories/{status}/{id}', [SubcategoryController::class, "changeStatus"]);
+    Route::delete('/subcategories/delete/{id}', [SubcategoryController::class, 'delete'])->name('admin.subcategories.delete');
     Route::post('/subcategories/store', [SubcategoryController::class, 'store']);
 
     Route::get('/subsubcategories', [SubsubcategoryController::class, 'index']);
     Route::get('/subsubcategories/create', [SubsubcategoryController::class, 'subcreateCategory']);
     Route::get('/subsubcategories/edit/{id}',[SubsubcategoryController::class, 'edit']);
-    Route::post('/subsubcategories/update', [SubsubcategoryController::class, 'update']);
+    Route::get('/subsubcategories/{status}/{id}', [SubsubcategoryController::class, "changeStatus"]);
+    Route::delete('/subsubcategories/delete/{id}', [SubsubcategoryController::class, 'delete'])->name('admin.subsubcategories.delete');
+    
+  
     Route::post('/subsubcategories/store', [SubsubcategoryController::class, 'store']);
     
     Route::get('/vender_profile', [Vender_profileController::class, 'index']);
-    Route::get('/subsubcategories/create', [SubsubcategoryController::class, 'subcreateCategory']);
-    Route::get('/subsubcategories/edit/{id}',[SubsubcategoryController::class, 'edit']);
-    Route::post('/subsubcategories/update', [SubsubcategoryController::class, 'update']);
-    Route::post('/subsubcategories/store', [SubsubcategoryController::class, 'store']);
+    Route::get('/vender_profile/create', [Vender_profileController::class, 'create']);
+    Route::get('/vender_profile/edit/{id}',[Vender_profileController::class, 'edit']);
+    Route::get('/vender_profile/{status}/{id}',[ Vender_profileController::class, "changeStatus"]);
+    Route::delete('/vender_profile/delete/{id}', [Vender_profileController::class, 'delete'])->name('admin.vender_profile.delete');
+
+
+   
+
+    Route::post('/vender_profile/store', [Vender_profileController::class, 'store']);
 
   
     Route::get("/blog", [BlogController::class, 'index']);

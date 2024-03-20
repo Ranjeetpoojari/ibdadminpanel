@@ -26,19 +26,25 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">All Categories
-                                    <a href="{{url('/admin/subsubcategories/create')}}"><button class="btn btn-info btn-sm">Create New</button></a>
+                                    <a href="{{url('admin/vender_profile/create')}}"><button class="btn btn-info btn-sm">Create New</button></a>
                                 </h4>
                                 <div class="table-responsive">
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th> S.R.No. </th>
-                                                <th>Language Name </th>
-                                              
-                                                {{-- <th> Banner </th>
-                                                <th> Icon </th> --}}
-                                                <th> Slug </th>
-                                                <th> Action </th>
+                                                <th>Id</th>
+                                                <th> Business Name </th>
+                                                <th>Image</th>
+                                                <th>Address </th>
+                                                <th>City </th>
+                                                <th> State </th>
+                                                <th>Pincode </th>
+                                                <th> Country </th>
+                                                <th>Verfied </th>
+                                                <th>Email </th>
+                                                <th>Number </th>
+                                                <th>Is Active </th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                          <tbody>
@@ -59,20 +65,69 @@
                                                     {{$x}}
                                                 </td>
                                                 <td>
-                                                    {{$item->name}}
+                                                    {{$item->business_name}}
                                                 </td>
                                               
                                                 <td>
-                                                    {{-- <img src="{{url($item->icon)}}" alt="{{$item->name}}" srcset=""> --}}
+                                                    <img src="{{url($item->profile_image)}}" alt="{{$item->profile_image}}" srcset="">
                                                  </td>
                                                 <td>
-                                                    {{$item->slug}}
+                                                    {{$item->address}}
                                                 </td>
                                                 <td>
-                                                    <a href="{{url('/admin/categories/edit/'.encrypt($item->id))}}">
+                                                    {{$item->city}}
+                                                </td>
+                                                <td>
+                                                    {{$item->state}}
+                                                </td>
+                                                <td>
+                                                    {{$item->pincode}}
+                                                </td>
+                                                <td>
+                                                    {{$item->country}}
+                                                </td>
+                                                <td>
+                                                    @if ($item->is_verfied == 1)
+                                                    Yes
+                                                    @endif
+                                                    @if ($item->is_verfied == 0)
+                                                   No
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    {{$item->contact_email}}
+                                                </td>
+                                                <td>
+                                                    {{$item->contact_number}}
+                                                </td>
+                                                <td>
+                                                    {{$item->is_active}}
+                                                </td>
+                                                <td>
+                                                    
+                                                    @if ($item->is_active == "active")
+                                                    <a href="{{ url('/admin/vender_profile/inactive/' . encrypt($item->id)) }}">
+                                                        <button type="button" class="btn btn-danger btn-sm">Inactive</button>
+                                                    </a>
+                                                @endif
+                                                @if ($item->is_active == "inactive")
+                                                    <a href="{{ url('/admin/vender_profile/active/' . encrypt($item->id)) }}">
+                                                        <button type="button" class="btn btn-success btn-sm">Active</button>
+                                                    </a>
+                                                @endif
+                                                    <a href="{{url('/admin/vender_profile/edit/' . encrypt($item->id))}}">
                                                         <button type="button" class="btn btn-info btn-sm">Edit</button>
                                                     </a>
-                                                    
+                                                    <a href="{{ url('/admin/vender_profile/delete/' . $item->id) }}" 
+                                                        onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this vendor profile?')) document.getElementById('delete-form-{{ $item->id }}').submit();"
+                                                        class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-trash"></i>
+                                                     </a>
+                                                     <form id="delete-form-{{ $item->id }}" action="{{ url('/admin/vender_profile/delete/' . $item->id) }}" method="POST" style="display: none;">
+                                                         @csrf
+                                                         @method('DELETE')
+                                                     </form>
+                                                     
                                                 </td>
                                             </tr>
                                             @endforeach

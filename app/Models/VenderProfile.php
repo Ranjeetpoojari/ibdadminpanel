@@ -13,7 +13,7 @@ class VenderProfile extends Model
     'slug',
     'address',
     'city',
-    'stste',
+    'state',
     'pincode',
     'country',
     'is_verfied',
