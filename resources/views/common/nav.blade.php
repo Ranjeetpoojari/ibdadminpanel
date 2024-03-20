@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-wrap">
       <div class="navbar_container m-auto">
         <div class="d-flex justify-content-between my-2">
-          <a class="navbar-brand d-block" href="#"><img src="{{url('/assets/images/logo.png')}}" alt="" srcset="" class=""></a>
+          <a class="navbar-brand d-block" href="/"><img src="{{url('/assets/images/logo.png')}}" alt="" srcset="" class=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
             aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,15 +10,14 @@
 
           <div class="collapse navbar-collapse flex-end" id="navbarSupportedContent">
             <ul class="d-flex align-items-center ms-auto">
-              <li>
-                <a href="#" target="_blank"
-                  class="px-3 py-1 fw-300 text-capitalize text-dark text-decoration-none mt-2">Need Help?</a>
+              <li class="">
+                <a href="{{url('/contact')}}" class="px-3 py-1 fw-300 text-capitalize text-dark text-decoration-none mt-2">Need Help?</a>
               </li>
               <li>
-                <a href="#" target="_blank" class="px-3 py-1 fw-300 text-dark text-decoration-none mt-2">Join as
+                <a href="#" class="px-3 py-1 fw-300 text-dark text-decoration-none mt-2">Join as
                   Vendor</a>
               </li>
-              <li>
+              <li class="d-none">
                 <a href="#" target="_blank" class="px-3 py-1 fw-300 text-dark text-decoration-none mt-2"><img
                     src="{{url('/frontend/images/bell.png')}}" alt="" srcset=""></a>
               </li>

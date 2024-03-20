@@ -109,15 +109,27 @@
       
      
         </ul>
-        <nav aria-label="Page navigation example ">
-            <ul class="pagination justify-content-center">
-              <li class="page-item"><a class="page-link text-dark" target="_blank" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link text-dark" target="_blank" href="#">1</a></li>
-              <li class="page-item"><a class="page-link text-dark" target="_blank" href="#">2</a></li>
-              <li class="page-item"><a class="page-link text-dark" target="_blank" href="#">3</a></li>
-              <li class="page-item"><a class="page-link text-dark" target="_blank" href="#">Next</a></li>
-            </ul>
-          </nav>
+        
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+              <li class="page-item {{ $products->appends(request()->query())->previousPageUrl() ? '' : 'disabled' }}">
+                  <a class="page-link text-dark" href="{{ $products->previousPageUrl() ?? '#' }}">Previous</a>
+              </li>
+              
+              @for ($i = 1; $i <= $products->lastPage(); $i++)
+                  <li class="page-item {{ $i == $products->currentPage() ? 'active' : '' }}">
+                      <a class="page-link text-dark" href="{{ $products->appends(request()->query())->url($i) }}">{{ $i }}</a>
+                  </li>
+              @endfor
+              
+              <li class="page-item {{ $products->nextPageUrl() ? '' : 'disabled' }}">
+                  <a class="page-link text-dark" href="{{ $products->appends(request()->query())->nextPageUrl() ?? '#' }}">Next</a>
+              </li>
+          </ul>
+        </nav>
+    
+      
+      
     </div>
     <div class="col-12 col-lg-4 d-flex justify-content-around flex-wrap">
         <div class="owl-carousel filter_slider owl-theme inner_slider  mx-lg-auto mb-3">
@@ -129,22 +141,6 @@
                 <p class="text-white fw_400 fs_12 px-4 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-        <div class="filter_card position-relative">
-            <img src="{{url('/assets/images/filter_img.png')}}" alt="" srcset="" class="position-absolute z-1 rounded-4 w-100 h-100">
-            <div class="position-absolute bg-dark z-2 w-100 h-100 rounded-4 opacity-25"></div>
-            <div class="position-absolute z-3 w-100 h-50 bottom-0">
-                <h6 class="text-white fw_500 fs_18 px-4 pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing </h6>
-                <p class="text-white fw_400 fs_12 px-4 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </div>
-        <div class="filter_card position-relative">
-            <img src="{{url('/assets/images/filter_img.png')}}" alt="" srcset="" class="position-absolute z-1 rounded-4 w-100 h-100">
-            <div class="position-absolute bg-dark z-2 w-100 h-100 rounded-4 opacity-25"></div>
-            <div class="position-absolute z-3 w-100 h-50 bottom-0">
-                <h6 class="text-white fw_500 fs_18 px-4 pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing </h6>
-                <p class="text-white fw_400 fs_12 px-4 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </div>
         </div>
         <div class="owl-carousel filter_slider owl-theme inner_slider  mx-lg-auto mb-3">
         <div class="filter_card position-relative">
@@ -155,42 +151,8 @@
                 <p class="text-white fw_400 fs_12 px-4 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-        <div class="filter_card position-relative">
-            <img src="{{url('/assets/images/filter_img2.png')}}" alt="" srcset="" class="position-absolute z-1 rounded-4 w-100 h-100">
-            <div class="position-absolute bg-dark z-2 w-100 h-100 rounded-4 opacity-25"></div>
-            <div class="position-absolute z-3 w-100 h-50 bottom-0">
-                <h6 class="text-white fw_500 fs_18 px-4 pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing </h6>
-                <p class="text-white fw_400 fs_12 px-4 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </div>
-        <div class="filter_card position-relative">
-            <img src="{{url('/assets/images/filter_img2.png')}}" alt="" srcset="" class="position-absolute z-1 rounded-4 w-100 h-100">
-            <div class="position-absolute bg-dark z-2 w-100 h-100 rounded-4 opacity-25"></div>
-            <div class="position-absolute z-3 w-100 h-50 bottom-0">
-                <h6 class="text-white fw_500 fs_18 px-4 pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing </h6>
-                <p class="text-white fw_400 fs_12 px-4 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </div>
       </div>
-        <div class="service_card border rounded-4 mx-auto mb-3">
-            <div class="service_img position-relative">
-              <img src="{{url('/assets/images/service_img.png')}}" alt="" srcset="" class="w-100 h-100 position-absolute z-1">
-              <span class="position-absolute top-0 ms-2 px-2 mt-2 rounded-2 text-blue bg-ter fs_15"><i class="bi bi-patch-check-fill"></i>&nbsp;&nbsp;Verified</span>
-              <span class="position-absolute top-0  mt-2 fs_15 px-2 rounded-2 text-yellow bg-oct"><i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;Best saler</span>
-            </div>
-            <div class="service-content">
-              <div class="d-flex">
-                <div class="ps-2 col-10">
-                  <h5 class="fw_500 fs_16 mb-0 mt-2">Rajaram Interior hardware</h5>
-                  <span class="text-yellow fs_12">4.6/5</span>&nbsp;<span class="fs_12">(256 Ratings)</span>
-                </div>
-                <div class="col-2">
-                <span class="py-1 px-2 rounded-circle bg-gray d-inline-block mt-2"><i class="bi bi-bookmark "></i></span>
-                </div>
-              </div>
-              <a href="#" target="_blank" class="text-white text-capitalize bg-sec  py-2 mb-3 m-2 rounded-2 text-center d-block text-decoration-none fw_500">Get Phone Number</a>
-            </div>
-          </div>
+        
     </div>
 </div>
         </div>

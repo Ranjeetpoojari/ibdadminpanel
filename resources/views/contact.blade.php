@@ -10,23 +10,24 @@
   <div class="container">
     <div class="row my-5 shadow-sm">
       <div class="col-lg-8">
-          <form action="" method="get" id="contact_form">
+          <form action="{{url('/contact/save')}}" method="post" id="contact_form">
+            @csrf
           <div class="row contact_form px-2 px-lg-5">
             <h5 class="mb-3 fs_24 mt-5">How can we help you ?</h5>
             <div class="col-md-6">
-              <input type="text" name="name"  placeholder="Enter Your name" id="contact_name" class=" my-2 mx-1 px-2 w-100 py-2 rounded-2 border-1" >
+              <input type="text" name="name"  placeholder="Enter Your name" id="contact_name" class=" my-2 mx-1 px-2 w-100 py-2 rounded-2 border-1" required>
             </div>
             <div class="col-md-6">
-              <input type="text" name="phone"  placeholder="Enter Phone nmber" id="contact_number" class=" my-2 mx-1 px-2 w-100 py-2 rounded-2 border-1" >
+              <input type="text" name="phone"  placeholder="Enter Phone nmber" id="contact_number" class=" my-2 mx-1 px-2 w-100 py-2 rounded-2 border-1"  required>
             </div>
             <div class="col-md-6">
-              <input type="text" name="email"  placeholder="Enter Email id" id="contect_email" class=" my-2 mx-1 px-2 w-100 py-2 rounded-2 border-1" >
+              <input type="text" name="email_id"  placeholder="Enter Email id" id="contect_email" class=" my-2 mx-1 px-2 w-100 py-2 rounded-2 border-1"  required>
             </div>
             <div class="col-md-6">
               <input type="text" name="subject"  placeholder="Enter the Subject" id="contact_topice" class=" my-2 mx-1 px-2 w-100 py-2 rounded-2 border-1" >
             </div>
             <div class="col-12">
-            <textarea name="" id="contact_message"  class="w-100 h-auto p-2 rounded-2" rows="7" placeholder="Your Meassage here.." ></textarea>
+            <textarea name="message" id="contact_message"  class="w-100 h-auto p-2 rounded-2" rows="7" placeholder="Your Meassage here.."  required></textarea>
             </div>
           <div class="col-12">
             <input type="submit" value="Submit" class="my-2 py-2 rounded-2 text-white  px-4 bg-prim">
@@ -40,7 +41,7 @@
           <ul class="ps-3">
             <li class="my-3"><a href="#" class="fs_14 text-white d-flex text-decoration-none align-items-center" > <i class="bi bi-telephone border border-2 border-white rounded-circle px-2 py-1 fs_24 text-white"></i>&nbsp;&nbsp;<span>+91 82681 08343</span></a></li>
             <li class="my-3"><a href="#" class="fs_14 text-white d-flex text-decoration-none align-items-center"><i class="bi bi-envelope border border-2 border-white rounded-circle px-2 py-1 fs_24 text-white"></i>&nbsp;&nbsp;<span>hello@whizzactsolutions.com</span></a></li>
-            <li class="my-3"><a href="#" class="fs_14 text-white d-flex text-decoration-none align-items-center"><i class="bi bi-geo-alt border border-2 border-white rounded-circle px-2 py-1 fs_24 text-white"></i>&nbsp; &nbsp; <span>3, Kumbharwada, S.T. Road, Jai Mata Di Complex, Chembur, Mumbai, Maharashtra India - 400071.</span></a></li>
+            <li class="my-3"><a class="fs_14 text-white d-flex text-decoration-none align-items-center"><i class="bi bi-geo-alt border border-2 border-white rounded-circle px-2 py-1 fs_24 text-white"></i>&nbsp; &nbsp; <span>3, Kumbharwada, S.T. Road, Jai Mata Di Complex, Chembur, Mumbai, Maharashtra India - 400071.</span></a></li>
           </ul>
           <hr class="text-white mt-4">
           <ul class="px-3 d-flex justify-content-between">

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\Models\Contact;
 use App\Models\Category;
+use App\Models\Subscriber;
 use App\Models\LeadDeatail;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
@@ -65,7 +67,7 @@ class HomeController extends Controller
     }
    
     public function search(Request $request){
-
+        
         if($request->category){
             $products = DB::table('product_detail as p')
                 ->join('users as u', 'p.user_id', '=', 'u.id')
@@ -76,7 +78,7 @@ class HomeController extends Controller
                         ->from('category')
                         ->where('slug', $request->category);
                 })
-                ->select('u.id', 'p.*', 'vp.profile_image', 'vp.business_name', 'vp.is_verfied', 'vp.slug')->distinct()->paginate(10);
+                ->select('u.id', 'p.*', 'vp.profile_image', 'vp.business_name', 'vp.is_verfied', 'vp.slug')->distinct()->paginate(15);
             $category = Category::where('slug', $request->category)->first();
         }else if($request->subcategory){
             $products = DB::table('product_detail as p')
@@ -88,9 +90,23 @@ class HomeController extends Controller
                         ->from('subcategory')
                         ->where('slug', $request->subcategory);
                 })
-                ->select('u.id', 'p.*', 'vp.profile_image', 'vp.business_name', 'vp.is_verfied', 'vp.slug')->distinct()->paginate(10);
+                ->select('u.id', 'p.*', 'vp.profile_image', 'vp.business_name', 'vp.is_verfied', 'vp.slug')->distinct()->paginate(15);
             
             $category = Subcategory::where('slug', $request->subcategory)->first();
+        }else if($request->query){
+            $searchTerm = $request->query('query');
+            $products = DB::table('product_detail as p')
+                ->join('users as u', 'p.user_id', '=', 'u.id')
+                ->join('vendor_profile as vp', 'u.id', '=', 'vp.user_id')
+                ->where('vp.is_active', 'active')
+                ->where(function($query) use ($searchTerm) {
+                    $query->where('p.name', 'LIKE', "%$searchTerm%")
+                          ->orWhere('vp.business_name', 'LIKE', "%$searchTerm%");
+                })
+                ->select('u.id', 'p.*', 'vp.profile_image', 'vp.business_name', 'vp.is_verfied', 'vp.slug')
+                ->distinct()
+                ->paginate(15);
+            $category = json_decode(json_encode(["name" => $searchTerm, "id"=>0]), false);
         }
 
         foreach($products as $item){
@@ -105,7 +121,7 @@ class HomeController extends Controller
             $item->rate = self::calculateAverageRating($ratings);
             $item->total_rate = $x;
         }
-        
+
         return view('search', ["products"=>$products, "category"=>$category]);
     }
     
@@ -145,6 +161,24 @@ class HomeController extends Controller
     
     public function termscondition(){
         return view('termscondition');
+    }
+
+    public function Subscriber(Request $request){
+        $sub = new Subscriber;
+        $sub->email_id = $request->email_id;
+        $sub->save();
+        return back();
+    }
+
+    public function storeContact(Request $request){
+        $con = new Contact;
+        $con->name = $request->name;
+        $con->phone = $request->phone;
+        $con->email_id = $request->email_id;
+        $con->subject = $request->subject;
+        $con->message = $request->message;
+        $con->save();
+        return back()->with("msg", "Thank you for connecting with us. We will back to you soon...");
     }
     
     public function blog(){

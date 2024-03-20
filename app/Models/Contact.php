@@ -10,9 +10,8 @@ class Contact extends Model
     
     protected $fillable = [
         'name',
-        'email',
         'phone',
-        'location',
+        'email_id',
         'subject',
         'message',
         'created_at',
@@ -24,7 +23,7 @@ class Contact extends Model
         'updated_at',
     ];
 
-    protected $table = 'contactus';
+    protected $table = 'contact_us';
 
 
 }

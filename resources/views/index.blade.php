@@ -118,7 +118,7 @@
                   
                 <div class="service_card border rounded-4 m-auto">
                   <div class="service_img position-relative">
-                    <img src="{{url($item->profile_image)}}" alt="{{$item->business_name}}" srcset="" class="w-100 h-100 position-absolute z-1">
+                    <a href="{{url('/company/'.$item->slug)}}"><img src="{{url($item->profile_image)}}" alt="{{$item->business_name}}" srcset="" class="w-100 h-100 position-absolute z-1"></a>
                     <span class="position-absolute top-0 ms-2 px-2 mt-2 rounded-2 text-blue bg-ter fs_15"><i class="bi bi-patch-check-fill"></i>&nbsp;&nbsp;Verified</span>
                     <span class="position-absolute top-0  mt-2 fs_15 px-2 rounded-2 text-yellow bg-oct"><i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;Best saler</span>
                   </div>
@@ -139,7 +139,7 @@
                       <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500">Color Paint</li>
                       <li class="bg-gray px-2 py-1  text-capitalize fs_12  mx-1 rounded-2 fw_500">+50</li>
                       </ul>
-                    <a href="#" target="_blank" class="text-white text-capitalize bg-sec  py-2 mb-3 m-2 rounded-2 text-center d-block text-decoration-none fw_500">Get Phone Number</a>
+                    <a href="{{url('/company/'.$item->slug)}}" target="_blank" class="text-white text-capitalize bg-sec  py-2 mb-3 m-2 rounded-2 text-center d-block text-decoration-none fw_500">Get Phone Number</a>
                   </div>
 
                 </div>
@@ -160,7 +160,7 @@
             
               <div class="service_card border rounded-4 m-auto">
                 <div class="service_img position-relative">
-                  <img src="{{url($item->profile_image)}}" alt="{{$item->business_name}}" srcset="" class="w-100 h-100 position-absolute z-1">
+                  <a href="{{url('/company/'.$item->slug)}}"><img src="{{url($item->profile_image)}}" alt="{{$item->business_name}}" srcset="" class="w-100 h-100 position-absolute z-1"></a>
                   <span class="position-absolute top-0 ms-2 px-2 mt-2 rounded-2 text-blue bg-ter fs_15"><i class="bi bi-patch-check-fill"></i>&nbsp;&nbsp;Verified</span>
                   <span class="position-absolute top-0  mt-2 fs_15 px-2 rounded-2 text-yellow bg-oct"><i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;Best saler</span>
                 </div>
@@ -175,7 +175,7 @@
                     </div>
                   </div>
               
-                  <a href="#" target="_blank" class="text-white text-capitalize bg-sec  py-2 mb-3 m-2 rounded-2 text-center d-block text-decoration-none fw_500">Get Phone Number</a>
+                  <a href="{{url('/company/'.$item->slug)}}" target="_blank" class="text-white text-capitalize bg-sec  py-2 mb-3 m-2 rounded-2 text-center d-block text-decoration-none fw_500">Get Phone Number</a>
                 </div>
 
               </div>
@@ -226,7 +226,7 @@
                 <div class="inner_card_parent mx-2 servce_parent">
                   <div class="service_card border rounded-4">
                     <div class="service_img position-relative">
-                      <img src="{{url($item->profile_image)}}" alt="{{$item->business_name}}" srcset="" class="w-100 h-100 position-absolute z-1">
+                      <a href="{{url('/company/'.$item->slug)}}"><img src="{{url($item->profile_image)}}" alt="{{$item->business_name}}" srcset="" class="w-100 h-100 position-absolute z-1"></a>
                       <span class="position-absolute top-0 ms-2 px-2 mt-2 rounded-2 text-blue bg-ter fs_15"><i class="bi bi-patch-check-fill"></i>&nbsp;&nbsp;Verified</span>
                       <span class="position-absolute top-0  mt-2 fs_15 px-2 rounded-2 text-yellow bg-oct"><i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;Best saler</span>
                     </div>
@@ -241,7 +241,7 @@
                         </div>
                       </div>
                     
-                      <a href="#" target="_blank" class="text-white text-capitalize bg-sec  py-2 mb-3 m-2 rounded-2 text-center d-block text-decoration-none fw_500">Get Phone Number</a>
+                      <a href="{{url('/company/'.$item->slug)}}" target="_blank" class="text-white text-capitalize bg-sec  py-2 mb-3 m-2 rounded-2 text-center d-block text-decoration-none fw_500">Get Phone Number</a>
                     </div>
       
                   </div>
@@ -260,7 +260,7 @@
           
               <h2 class="fs_50 fw_700 text-white mx-4 my-3 m-lg-5 ">Lorem ipsum is placeholder text</h2>
            <p class="fs_16 fw_500 text-white px-4 px-lg-5 adv_para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
-         <a href="#" target="_blank" class="text-white fw_500 text-decoration-none fs_16 d-block mt-lg-4 mx-3 mx-lg-5 text-capitalize mb-3 mb-lg-0">join Now</a>
+         <a href="#" class="text-white fw_500 text-decoration-none fs_16 d-block mt-lg-4 mx-3 mx-lg-5 text-capitalize mb-3 mb-lg-0">join Now</a>
          
           </div>
           <div class="col-12 col-md-6 rounded-end-4 px-0">
@@ -281,7 +281,7 @@
           <div class="col-12 col-md-6 rounded-end-4 px-0">
             <div class="advtisement_img2 rounded-end-4 my-3 ">
 
-              <img src="{{url('/assets/images/adv_vector.png')}}" alt="" srcset="" class="w-100 h-100 rounded-end-4">
+              <img src="{{url('/assets/images/adv.png')}}" alt="" srcset="" class="w-100 h-100 rounded-end-4">
             </div>
           </div>
           <div class="col-12 col-md-6 rounded-end-4 p-0  advtisement_content2">
@@ -289,7 +289,7 @@
               <h2 class="fs_50 fw_700 text-end text-prim mx-4 mx-lg-5 my-3 my-lg-5">Lorem ipsum is placeholder text</h2>
            <p class="fs_16 fw_500 text-end px-4 px-lg-5 adv_para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
            <div class="d-flex justify-content-end me-3 me-lg-5">
-             <a href="/about" target="_blank" class=" text-end fw_500 text-decoration-none fs_16 d-inline-block mt-2 mt-lg-4 text-capitalize bg-gray rounded-2 py-1 px-3 text-dark">Know more</a>
+             <a href="/about" class=" text-end fw_500 text-decoration-none fs_16 d-inline-block mt-2 mt-lg-4 text-capitalize bg-gray rounded-2 py-1 px-3 text-dark">Know more</a>
            </div>
           </div>
           </div>
