@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers\admin;
 
+use Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator; // Corrected the typo
 use Illuminate\Support\Facades\Auth; // Corrected the typo
 use Illuminate\Http\Request;
 use App\Models\VenderProfile;
+use App\Models\User;
 
-class Vender_profileController extends Controller
+class VenderController extends Controller
 {
     public function index(Request $req)
     {
-        $vender = VenderProfile::all(); // Corrected the variable name
-        return view('admin.vender_profile.index', ['vender' => $vender]); // Corrected the variable name
+        $vender = VenderProfile::orderBy("id", 'desc')->paginate(15);
+        return view('admin.vender_profile.index', ['vender' => $vender]);
     }
 
     public function create(Request $req)
@@ -25,7 +27,10 @@ class Vender_profileController extends Controller
     public function edit(Request $req, $id)
     {
         $vender = VenderProfile::find(decrypt($id));
-        return view('admin.vender_profile.create', ["vender" => $vender, 'text' => "Update Vendor Profile"]); // Corrected the text
+        $user = User::find($vender->user_id);
+        $vender->firstname = $user->firstname;
+        $vender->lastname = $user->lastname;
+        return view('admin.vender_profile.edit', ["vender" => $vender, 'text' => "Update Vendor Profile"]); // Corrected the text
     }
     // public function deletevender(Request $req, $id)
     // {
@@ -54,18 +59,46 @@ class Vender_profileController extends Controller
     }
     public function store(Request $req)
     { 
-        $userId = Auth::id();
-        $venderprofile = $req->has('id') ? VenderProfile::find($req->id) : new VenderProfile;
+        // return $req;
+
+        if($req->type == "create"){
+            $venderprofile = new VenderProfile;
+            $user = new User;
+            $user->firstname = $req->firstname;
+            $user->lastname = $req->lastname;
+            $user->email = $req->contact_email;
+            $user->mobile = $req->contact_number;
+            $user->password = Hash::make($req->firstname."@123");
+            $user->role_id = 2;
+            $user->is_active = $req->is_active;
+            $user->save();
+        }
+       
+
+        if($req->type == "edit"){
+            $venderprofile = VenderProfile::find($req->id);
+            $user = User::find($venderprofile->user_id);
+            $user->email = $req->contact_email;
+            $user->mobile = $req->contact_number;
+            $user->is_active = $req->is_active;
+            $user->save();
+        }
+
     
         if ($req->hasFile('profile_image')) {
-            $fileName = time() . $req->file('profile_image')->getClientOriginalName();
+            $file = $req->file('profile_image');
+            $fileName = $req->slug.'_'.time() . '.' . $file->getClientOriginalExtension();
             $destinationPath = public_path() . '/Vender_profile/';
-            $req->file('profile_image')->move($destinationPath, $fileName);
-            $venderprofile->Profile_image = '/Vender_profile/' . $fileName;
+            $file->move($destinationPath, $fileName);
+            $venderprofile->profile_image = '/Vender_profile/' . $fileName;
+        
+            $user->profile_img = '/Vender_profile/' . $fileName;
+            $user->save();
         }
     
-        $venderprofile->user_id = $userId;
+        $venderprofile->user_id = $user->id;
         $venderprofile->business_name = $req->business_name;
+        $venderprofile->slug = $req->slug;
         $venderprofile->address = $req->address;
         $venderprofile->city = $req->city;
         $venderprofile->state = $req->state;
@@ -73,8 +106,8 @@ class Vender_profileController extends Controller
         $venderprofile->pincode = $req->pincode;
         $venderprofile->contact_email = $req->contact_email;
         $venderprofile->contact_number = $req->contact_number;
-        $venderprofile->is_active = "active";
-        $venderprofile->is_verfied = $req->is_verfied ?? 0; // Use the provided value or default to 0
+        $venderprofile->is_active = $req->is_active;
+        $venderprofile->is_verfied = $req->is_verfied ?? 0;
         $venderprofile->save();
     
         if ($venderprofile->id) {
@@ -84,6 +117,8 @@ class Vender_profileController extends Controller
             return back()->with(["status" => "failed", "msg" => "Failed to create or update vendor"]);
         }
     }
+
+    
     
     
 }

@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title','Language | Easy Pandit Online')
+@section('title','Dashboard | Vendors List')
 @section('style')
 
 @stop
@@ -25,7 +25,7 @@
                     <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">All Categories
+                                <h4 class="card-title">All Vendors
                                     <a href="{{url('admin/vender_profile/create')}}"><button class="btn btn-info btn-sm">Create New</button></a>
                                 </h4>
                                 <div class="table-responsive">
@@ -35,11 +35,7 @@
                                                 <th>Id</th>
                                                 <th> Business Name </th>
                                                 <th>Image</th>
-                                                <th>Address </th>
                                                 <th>City </th>
-                                                <th> State </th>
-                                                <th>Pincode </th>
-                                                <th> Country </th>
                                                 <th>Verfied </th>
                                                 <th>Email </th>
                                                 <th>Number </th>
@@ -72,19 +68,7 @@
                                                     <img src="{{url($item->profile_image)}}" alt="{{$item->profile_image}}" srcset="">
                                                  </td>
                                                 <td>
-                                                    {{$item->address}}
-                                                </td>
-                                                <td>
                                                     {{$item->city}}
-                                                </td>
-                                                <td>
-                                                    {{$item->state}}
-                                                </td>
-                                                <td>
-                                                    {{$item->pincode}}
-                                                </td>
-                                                <td>
-                                                    {{$item->country}}
                                                 </td>
                                                 <td>
                                                     @if ($item->is_verfied == 1)
@@ -134,7 +118,7 @@
                                             @endif
                                         </tbody> 
                                     </table>
-                                    {{-- {{$vender->links('vendor.pagination.bootstrap-4')}} --}}
+                                    {{$vender->links('vendor.pagination.bootstrap-4')}}
                                 </div>
                             </div>
                         </div>

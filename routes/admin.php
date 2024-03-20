@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\Users;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\SubsubcategoryController;
-use App\Http\Controllers\Admin\Vender_profileController;
+use App\Http\Controllers\Admin\VenderController;
 
 
 /*
@@ -24,19 +24,13 @@ use App\Http\Controllers\Admin\Vender_profileController;
 
 
 Route::get('/login', [AuthController::class, 'signin'])->name('login');
-
 Route::post("/authentication", [AuthController::class,'login']);
-
 Route::get("/logout", [AuthController::class, 'logout']);
-
 Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/dashboard', function () {
         return view('admin.dashboard.index');
     });
-
-    
-
 
     Route::get('/categories', [CategoryController::class, 'index']);
     Route::get('/categories/create', [CategoryController::class, 'createCategory']);
@@ -57,20 +51,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/subsubcategories/{status}/{id}', [SubsubcategoryController::class, "changeStatus"]);
     Route::delete('/subsubcategories/delete/{id}', [SubsubcategoryController::class, 'delete'])->name('admin.subsubcategories.delete');
     
-  
     Route::post('/subsubcategories/store', [SubsubcategoryController::class, 'store']);
     
-    Route::get('/vender_profile', [Vender_profileController::class, 'index']);
-    Route::get('/vender_profile/create', [Vender_profileController::class, 'create']);
-    Route::get('/vender_profile/edit/{id}',[Vender_profileController::class, 'edit']);
-    Route::get('/vender_profile/{status}/{id}',[ Vender_profileController::class, "changeStatus"]);
-    Route::delete('/vender_profile/delete/{id}', [Vender_profileController::class, 'delete'])->name('admin.vender_profile.delete');
-
-
-   
-
-    Route::post('/vender_profile/store', [Vender_profileController::class, 'store']);
-
+    Route::get('/vender_profile', [VenderController::class, 'index']);
+    Route::get('/vender_profile/create', [VenderController::class, 'create']);
+    Route::get('/vender_profile/edit/{id}',[VenderController::class, 'edit']);
+    Route::get('/vender_profile/{status}/{id}',[ VenderController::class, "changeStatus"]);
+    Route::delete('/vender_profile/delete/{id}', [VenderController::class, 'delete'])->name('admin.vender_profile.delete');
+    Route::post('/vender_profile/update', [VenderController::class, 'store']);
+    Route::post('/vender_profile/store', [VenderController::class, 'store']);
   
     Route::get("/blog", [BlogController::class, 'index']);
     Route::get("/blog/edit/{id}", [BlogController::class, 'view']);
@@ -78,12 +67,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post("/blog/store", [BlogController::class, 'store']);
     Route::get('/blog/{status}/{id}', [BlogController::class, "changeStatus"]);
     Route::delete('/admin/delete/{id}', [BlogController::class, 'deleteblog'])->name('admin.blog.delete');
-    
-  
-    
-
-
-
 
 
     Route::get("/blogs", [TestimonialController::class, 'blogsIndex']);

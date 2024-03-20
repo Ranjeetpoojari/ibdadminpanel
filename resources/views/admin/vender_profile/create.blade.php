@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title','Language | Easy Pandit Online')
+@section('title','Create new Vendor Profile')
 @section('style')
 
 @stop
@@ -35,11 +35,23 @@
                                 <div class="table-responsive">
                                     <form class="forms-sample" action="{{ url('/admin/vender_profile/store') }}" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
                                         @csrf
-                                        {{-- <input type="hidden" name="subcategory_id" value="{{ isset($subcategory->id) ? $subcategory->id : '' }}"> --}}
+                                        <input type="hidden" name="type" value="create">
                                         <input type="hidden" name="id" value="{{ isset($vender->id) ? $vender->id : '' }}">
                                         <div class="form-group">
                                             <label for="exampleInputUsername1">Business Name</label>
-                                            <input type="text" class="form-control" name="business_name" id="exampleInputUsername1" placeholder="Business Name" value="{{ isset($vender->business_name) ? $vender->business_name : '' }}" required>
+                                            <input type="text" onkeyup="BusinessNameToSlug(this.value)" class="form-control" name="business_name" id="exampleInputUsername1" placeholder="Business Name" value="{{ isset($vender->business_name) ? $vender->business_name : '' }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="slug">Slug</label>
+                                            <input type="text" class="form-control" name="slug" id="slug" placeholder="Slug" value="{{ isset($vender->slug) ? $vender->slug : '' }}" required readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="firstname">First Name</label>
+                                            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name" value="{{ isset($vender->firstname) ? $vender->firstname : '' }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastname">Last Name</label>
+                                            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name" value="{{ isset($vender->lastname) ? $vender->lastname : '' }}" required >
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputUsername1">Profile Image</label>
@@ -107,5 +119,20 @@
 
     @section('script')
 
+    <script>
+        function BusinessNameToSlug(str){
+            var slug = slugify(str);
+            $("#slug").val(slug);
+        }
+
+        function slugify(text) {
+            return text.toString().toLowerCase()
+                .replace(/\s+/g, '-')           // Replace spaces with -
+                .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+                .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+                .replace(/^-+/, '')             // Trim - from start of text
+                .replace(/-+$/, '');            // Trim - from end of text
+        }
+    </script>
     @stop
 @stop

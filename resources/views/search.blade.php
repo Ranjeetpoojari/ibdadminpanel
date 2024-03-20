@@ -110,6 +110,7 @@
      
         </ul>
         
+        @if(count($products)>15)
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center">
               <li class="page-item {{ $products->appends(request()->query())->previousPageUrl() ? '' : 'disabled' }}">
@@ -127,6 +128,7 @@
               </li>
           </ul>
         </nav>
+        @endif
     
       
       
