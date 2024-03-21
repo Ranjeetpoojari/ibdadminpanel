@@ -3,18 +3,23 @@ $(document).ready(function () {
       dots:false,
         loop: true,
         nav: true,
-        autoWidth: true,
+
         responsive: {
             0: {
+                
+                autoWidth: false,
                 items: 1
             },
             600: {
+                autoWidth: true,
                 items: 2
             },
             1000: {
+                autoWidth: true,
                 items: 3
             } // No comma here
         },  navText: ['<i class="bi bi-arrow-left-short  rounded-circle bg-gray fs_30 fw_500 bg-white start-0"></i>', '<i class="bi bi-arrow-right-short fs_30 fw_500 rounded-circle bg-white"></i>']
+        // }
     });
   
     $(".inner_slider").owlCarousel({
@@ -74,5 +79,21 @@ $("#contact_form").submit(function(){
    
  });
   
-  
+  $(document).ready(function(){
+    // $('.custom-side-nav').addClass('close-slide');
+    $('.body-overlay').addClass('d-none');
+    $('.custom-sider-button').on('click',function(){
+        $('.custom-side-nav').addClass('close-slide');
+        $('.body-overlay').removeClass('d-none');
+    });
+    $(".button-siide-close").on('click', function(){
+        $('.custom-side-nav').removeClass('close-slide');
+        $('.body-overlay').addClass('d-none');
+    });
+    $('.body-overlay').on('click',function(){
+        $(this).addClass('d-none');
+        $('.custom-side-nav').removeClass('close-slide');
+    })
+
+  });
   

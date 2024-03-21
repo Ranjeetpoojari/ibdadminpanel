@@ -46,13 +46,14 @@
             <li><a href="#" class="text-decoration-none text-dark fw_400 d-inline-block text-capitalize py-2">Join as Vendor</a></li>
           </ul>
         </div>
-        <div class="col-6 col-sm-12 col-md-3">
+        <div class="col-12 col-sm-6 col-md-3">
           <ul class="px-0">
             <li>
               <div class="d-flex footer_contact mt-3 mt-lg-0">
+                <div class=""><i class="bi bi-telephone fs_25 text-icon fw_600"></i></div>
                 <div class="">
-                  <i class="bi bi-telephone fs_25 text-icon fw_600"></i></div>
-                  <a href="tel:+918268108343" class="text-dark fs_15 fw_600 text-decoration-none">+91 8268108343</a>
+                  <h5 class="text-icon fs_15 mb-0">Phone:-</h5>
+                  <a href="tel:9137441197" class="text-dark fs_15 fw_600 text-decoration-none">+91 91374 41197</a>
               </div>
             </li>
             <li>
@@ -75,7 +76,7 @@
               </div>
             </li>
         </div>
-        <div class="col-6 col-sm-12 col-md-3">
+        <div class="col-12 col-sm-6 col-md-3">
           <ul class="px-0">
             <li>
               <div class="d-flex footer_contact mt-3 mt-lg-0">
@@ -83,7 +84,7 @@
                 <div class="">
                   <h5 class="text-icon fs_18 mb-0">Address:</h5>
                   <a target="_blank" class="text-dark fs_15 fw_600 text-decoration-none">   
-                    3, Kumbharwada, S.T. Road, Jai Mata Di Complex, Chembur, Mumbai, Maharashtra India - 400071.</a>
+                    17/1/2c, 1+1 Floor, G. Ambekar Marg, Near Fish Market, jijamata Nagar, Kalachowki, Mumbai 400033.</a>
                 </div>
               </div>
             </li>

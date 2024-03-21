@@ -6,7 +6,7 @@
 @section('content')
 
 @include('common.nav')
-<main>
+<main >
     <section>
       <div class="container-fluid px-0 ">
         <div class="position-relative index_banner">
@@ -25,7 +25,7 @@
                   <input type="search" class="form-control" name="query" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
               </form>
-              <div class="text-capitalize ps-1 ps-md-5">
+              <div class="text-capitalize ps-1 ps-md-3">
                 Popular Search:- &nbsp;
                 @if($category)
                 @foreach ($category as $item)
@@ -87,8 +87,8 @@
           </div>
           @if ($subcategory)
             @foreach ($subcategory as $item)
-              <div class="service_cat rounded-4 position-relative mx-2">
-                <img src="{{url('/assets/images/outer_img.png')}}" alt="" srcset="" class="w-100 h-100 rounde-4 position-absolute z-1">
+              <div class="service_cat rounded-4 position-relative mx-auto mx-lg-2">
+                <img src="{{url('/assets/images/outer_img.png')}}" alt="" srcset="" class="w-100 h-100 rounded-4 position-absolute z-1">
                 <div class="position-absolute w-100  bottom-0 z-2 card_overrlay"></div>
                 <div class="position-absolute w-100 bottom-0 z-5 card_overlay_content">
                   <h6 class="fw_600 fs_18 text-white ps-2">{{$item->name}}</h6>
@@ -255,8 +255,8 @@
     <section>
       <div class="container-fluid px-0 my-5">
         <div class="advtisement_con w-90 m-auto rounded-4">
-        <div class="row px-0">
-          <div class="col-12 col-md-6 rounded-end-4 p-0 bg-prim advtisement_content">
+        <div class="row ">
+          <div class="col-12 col-md-6 rounded-end-4 px-0 bg-prim advtisement_content">
           
               <h2 class="fs_50 fw_700 text-white mx-4 my-3 m-lg-5 ">Lorem ipsum is placeholder text</h2>
            <p class="fs_16 fw_500 text-white px-4 px-lg-5 adv_para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
@@ -275,7 +275,7 @@
 
     </section>
     <section>
-      <div class="container-fluid px-0 my-5">
+      <div class="container-fluid my-5">
         <div class="advtisement_con w-90 m-auto rounded-4">
         <div class="row px-0 border rounded-4">
           <div class="col-12 col-md-6 rounded-end-4 px-0">
@@ -289,7 +289,7 @@
               <h2 class="fs_50 fw_700 text-end text-prim mx-4 mx-lg-5 my-3 my-lg-5">Lorem ipsum is placeholder text</h2>
            <p class="fs_16 fw_500 text-end px-4 px-lg-5 adv_para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
            <div class="d-flex justify-content-end me-3 me-lg-5">
-             <a href="/about" class=" text-end fw_500 text-decoration-none fs_16 d-inline-block mt-2 mt-lg-4 text-capitalize bg-gray rounded-2 py-1 px-3 text-dark">Know more</a>
+             <a href="/about" class=" text-end fw_500 text-decoration-none fs_16 d-inline-block mt-2 mt-lg-4 text-capitalize bg-gray rounded-2 py-1 px-3 text-dark mb-3">Know more</a>
            </div>
           </div>
           </div>

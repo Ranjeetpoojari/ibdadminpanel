@@ -1,13 +1,54 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-wrap">
-      <div class="navbar_container m-auto">
+  @php
+  $categories = \App\Models\Category::where('is_active', "active")->get();
+@endphp
+  <div class="body-overlay d-none"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-wrap position-relative">
+      <div class="navbar_container m-auto ">
         <div class="d-flex justify-content-between my-2">
           <a class="navbar-brand d-block" href="/"><img src="{{url('/assets/images/logo.png')}}" alt="" srcset="" class=""></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-            aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler custom-sider-button" >
             <span class="navbar-toggler-icon"></span>
           </button>
-
+          <div class="custom-side-nav">
+            <div class="d-flex">
+              <div class="custom-side-logo">
+                <img src="{{url('/assets/images/logo.png')}}" alt="" srcset="">
+              </div>
+              <div class="button-siide-close d-flex align-items-center justify-content-end me-3"><i class="bi bi-x-lg "></i></div>
+            </div>
+            @if ($categories)
+            @foreach ($categories as $item)
+                @php
+                    $subcategories = \App\Models\Subcategory::where('is_active', "active")->where('category_id', $item->id)->get();
+                @endphp
+                    @if(count($subcategories) == 0) <a href="{{url('/search?category='.$item->slug)}}" class="fw-300 text-capitalize text-decoration-none fs_15 fw-500 ps-4 py-2 d-block text-dark">{{$item->name}}</a> @endif
+                    @if(count($subcategories)>0)
+            <div class="accordion accordion-flush px-1" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{$item->slug}}" aria-expanded="false" aria-controls="flush-collapseOne">
+                    {{$item->name}}
+               
+                  </button>
+                </h2>
+                <div id="{{$item->slug}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body px-3">
+                    @if($subcategories)
+                    <ul class="px-0">
+                    @foreach ($subcategories as $item)
+                    <li><a href="{{url('/search?subcategory='.$item->slug)}}" class="fw-300 text-capitalize text-dark text-decoration-none fs_15 fw-500 ps-2 py-1 d-block">{{$item->name}}</a></li> 
+                      @endforeach
+                    </ul>
+                     @endif
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endif 
+            @endforeach
+            @endif
+          </div>
           <div class="collapse navbar-collapse flex-end" id="navbarSupportedContent">
             <ul class="d-flex align-items-center ms-auto">
               <li class="">
@@ -35,9 +76,7 @@
       <hr class="border border-dark w-100 my-2 d-none d-lg-block">
       <div class="navbar_container m-auto d-none d-lg-flex">
         <ul class="d-flex align-items-center px-0 mb-1 dropdown_option">
-          @php
-              $categories = \App\Models\Category::where('is_active', "active")->get();
-          @endphp
+        
           @if ($categories)
               @foreach ($categories as $item)
                   @php
@@ -65,12 +104,3 @@
 
     </nav>
 </header>
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h5 id="offcanvasRightLabel"><img src="{{url('/assets/images/logo.png')}}" alt="" srcset=""></h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      ...
-    </div>
-  </div>
