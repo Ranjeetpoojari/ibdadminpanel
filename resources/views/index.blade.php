@@ -194,7 +194,7 @@
         <div class="w-90 m-auto">
           <div class="owl-carousel owl-theme outer-slider" >
             <div class="inner_card_parent mx-2 d-none d-lg-block">
-              <div class="owl-carousel owl-theme inner_slider" >
+              <div class="owl-carousel owl-theme inner_slider mt-5" >
                 <div class="inner-card rounded-4 position-relative">
                   <img src="{{url('/assets/images/innerimage.png')}}" alt="" srcset="" class="rounded-4 w-100 h-100 position-absolute top-0 z-1">
                   <div class="inner-overlay position-absolute z-2 rounded-4 bg-prim"></div>
