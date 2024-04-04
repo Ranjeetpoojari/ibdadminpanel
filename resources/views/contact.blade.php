@@ -18,7 +18,7 @@
               <input type="text" name="name"  placeholder="Enter Your name" id="contact_name" class=" my-2 mx-1 px-2 w-100 py-2 rounded-2 border-1" required>
             </div>
             <div class="col-md-6">
-              <input type="text" name="phone"  placeholder="Enter Phone nmber" id="contact_number" class=" my-2 mx-1 px-2 w-100 py-2 rounded-2 border-1"  required>
+              <input type="text" name="phone"  placeholder="Enter Phone number" id="contact_number" class=" my-2 mx-1 px-2 w-100 py-2 rounded-2 border-1"  required>
             </div>
             <div class="col-md-6">
               <input type="text" name="email_id"  placeholder="Enter Email id" id="contect_email" class=" my-2 mx-1 px-2 w-100 py-2 rounded-2 border-1"  required>
@@ -37,7 +37,9 @@
         </div>
         <div class="col-md-7 mt-5 mt-lg-0 col-lg-4 col-xl-4 bg-prim">
           <h5 class="my-3 fs_24 text-white fw_600 pt-4 px-3">Contact us</h5>
-          <p class=" px-3 text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, consequatur.</p>
+          <p class=" px-3 text-white">Pls feel free to reach out to us using the contact form below.
+            We will make sure to respond to you as soon as possible.
+            Thank you</p>
           <ul class="ps-3">
             <li class="my-3"><a href="tel:9137441197" class="fs_14 text-white d-flex text-decoration-none align-items-center" > <i class="bi bi-telephone border border-2 border-white rounded-circle px-2 py-1 fs_24 text-white"></i>&nbsp;&nbsp;<span>+91 91374 41197</span></a></li>
             <li class="my-3"><a href="mailto:ibdinteriors470@gmail.com" class="fs_14 text-white d-flex text-decoration-none align-items-center"><i class="bi bi-envelope border border-2 border-white rounded-circle px-2 py-1 fs_24 text-white"></i>&nbsp;&nbsp;<span>ibdinteriors470@gmail.com</span></a></li>
@@ -53,12 +55,7 @@
         </div>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="row px-0">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3772.6202888133325!2d72.84030737345694!3d18.992369704596058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s17%2F1%2F2c%2C%201%2B1%20Floor%2C%20G.%20Ambekar%20Marg%2C%20Near%20Fish%20Market%2C%20jijamata%20Nagar%2C%20Kalachowki%2C%20Mumbai%20400033!5e0!3m2!1sen!2sin!4v1711027406075!5m2!1sen!2sin"  height="400" class="w-100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      {{-- <iframe src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
-    </div>
-  </div>
+
   </main>
 @include('common.footer')
 

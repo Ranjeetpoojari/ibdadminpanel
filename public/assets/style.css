@@ -95,7 +95,7 @@ z-index: 1200;
 .index_banner{ aspect-ratio: 16/4.5;
   object-fit: cover;}
 
-  .inner_card_parent{width:749px;height: 400px;}
+  .inner_card_parent{width:749px;height: 320px;}
   .inner-card{width:749px; height:320px; object-fit: cover; overflow: hidden;}
   .inner-card .inner-overlay{width:720px;top:20px; height:540px; left:-257px; rotate: 45deg; background: 	#C4A484;}
   .inner-card .inner-content {width: 80%;}
@@ -120,7 +120,7 @@ z-index: 1200;
  .inner_card_parent.servce_parent{width: 320px;}
  .input-group.email input::placeholder{color:#fff;}
  .owl-prev:hover,.owl-next:hover{ background-color:transparent!important;color: black !important;;}
- .owl-theme .owl-nav{position: relative; top:-276px; width: 100%; display: flex;  justify-content:space-between;left:0px;}
+ .owl-theme .owl-nav{position: relative; top:-200px; width: 100%; display: flex;  justify-content:space-between;left:0px;}
  .owl-theme .owl-nav .owl-next{position: absolute; top:-30%; display: flex;
   justify-content: space-between; left: 95%;}
   .owl-theme .owl-nav .owl-prev{position: absolute; top:-30%; display: flex;

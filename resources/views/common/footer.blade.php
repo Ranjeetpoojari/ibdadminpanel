@@ -23,8 +23,7 @@
 
           <a class="navbar-brand d-block m-auto my-2" href="#"><img src="{{url('/assets/images/logo.png')}}" alt="" srcset="" class=""></a>
         </div>
-        <p class="fs_16 text-center m-auto">We ara a lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a
+        <p class="fs_16 text-center m-auto">Welcome to IBD construction, your premier choice for top quality interior as well as construction services with a couple of years of construction industry's practical experienc... <a
             href="/about" target="_blank" class="text-decoration-none">Read More</a></p>
       </div>
       
@@ -52,7 +51,7 @@
               <div class="d-flex footer_contact mt-3 mt-lg-0">
                 <div class=""><i class="bi bi-telephone fs_25 text-icon fw_600"></i></div>
                 <div class="">
-                  <h5 class="text-icon fs_15 mb-0">Phone:-</h5>
+                  <h5 class="text-icon fs_15 mb-0">For advertisement/promotion please call:-</h5>
                   <a href="tel:9137441197" class="text-dark fs_15 fw_600 text-decoration-none">+91 91374 41197</a>
               </div>
             </li>
@@ -61,7 +60,7 @@
                 <div class=""><i class="bi bi-envelope fs_25 text-icon fw_600"></i></div>
                 <div class="">
                   <h5 class="text-icon fs_15 mb-0">Mail:</h5>
-                  <a href="mailto:hello@whizzact.com" class="text-dark fs_15 fw_600 text-decoration-none">hello@whizzact.com</a>
+                  <a href="mailto:ibdinteriors470@gmail.com" class="text-dark fs_15 fw_600 text-decoration-none">ibdinteriors470@gmail.com</a>
                 </div>
               </div>
             </li>

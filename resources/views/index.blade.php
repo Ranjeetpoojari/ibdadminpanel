@@ -17,8 +17,8 @@
           </div>
           <div class="banner_content_con position-absolute z-5 opacity-100 m-auto w-100 h-100 top-0 text-white">
             <div class="banner_content d-block my-5 m-auto">
-              <h1 class="fw-bold text-white text-center">Find a wide range of local services at your fingertips.</h1>
-              <p class="text-center text-lg-start">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for</p>
+              <h1 class="fw-bold text-white text-center">Find a wide range of construction services at your fingertips.</h1>
+              <p class="text-center text-lg-start">Elevate your businesses with our online business promoting website for growth and success.</p>
               <form action="{{url('/search')}}" method="get">
                 <div class="input-group mb-3 index_search">
                   <span class="input-group-text" id="basic-addon1"><i class="bi bi-search fw-bold fs_20"></i></span>
@@ -194,7 +194,7 @@
         <div class="w-90 m-auto">
           <div class="owl-carousel owl-theme outer-slider" >
             <div class="inner_card_parent mx-2 d-none d-lg-block">
-              <div class="owl-carousel owl-theme inner_slider mt-5" >
+              <div class="owl-carousel owl-theme inner_slider " >
                 <div class="inner-card rounded-4 position-relative">
                   <img src="{{url('/assets/images/innerimage.png')}}" alt="" srcset="" class="rounded-4 w-100 h-100 position-absolute top-0 z-1">
                   <div class="inner-overlay position-absolute z-2 rounded-4 bg-prim"></div>

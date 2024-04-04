@@ -18,7 +18,7 @@ $(document).ready(function () {
                 autoWidth: true,
                 items: 3
             } // No comma here
-        },  navText: ['<i class="bi bi-arrow-left-short  rounded-circle bg-gray fs_30 fw_500 bg-white start-0"></i>', '<i class="bi bi-arrow-right-short fs_30 fw_500 rounded-circle bg-white"></i>']
+        },  navText: ['<i class="bi bi-arrow-left-short  rounded-circle bg-gray px-2 fs_30 fw_500 bg-white start-0"></i>', '<i class="bi bi-arrow-right-short px-2 fs_30 fw_500 rounded-circle bg-white"></i>']
         // }
     });
   
@@ -47,7 +47,7 @@ $(document).ready(function () {
           1480:{
               items:4
           }
-      },  navText: ['<i class="bi bi-arrow-left-short  rounded-circle bg-gray fs_30 fw_500 bg-white start-0"></i>', '<i class="bi bi-arrow-right-short fs_30 fw_500 rounded-circle bg-white"></i>']
+      },  navText: ['<i class="bi bi-arrow-left-short px-2 rounded-circle bg-gray fs_30 fw_500 bg-white start-0"></i>', '<i class="bi bi-arrow-right-short fs_30 px-2 fw_500 rounded-circle bg-white"></i>']
   });
   $(document).ready(function(){
 $("#contact_form").submit(function(){
